@@ -1,7 +1,8 @@
-import { CreatePost, getPost } from "@/actions/index";
+import { CreatePost } from "@/actions/index";
+import { prisma } from "@/lib/db";
 
 export default async function Home() {
-  const posts = await getPost();
+  const posts=await prisma.post.findMany()
 
   return (
     <div className="mx-auto max-w-xl p-6">

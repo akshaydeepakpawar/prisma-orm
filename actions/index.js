@@ -22,8 +22,3 @@ const title = formData.get("title");
     data: post,
   };
 }
-
-export const getPost=async()=>{
-    const posts=await prisma.post.findMany()
-    return posts;
-}
